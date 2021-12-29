@@ -8,6 +8,7 @@
 class IHandler{
 public:
     IHandler(IHandler *handler = nullptr) : _handler(handler){};
+    ~IHandler(){};
     
     virtual void HandleRequest(int event = -1) = 0;
 
@@ -22,10 +23,10 @@ protected:
  */
 class ConcreteHandler1 : public IHandler{
 public:
-    ConcreteHandler1(IHandler *handler = nullptr):IHandler(handler){
-    }
+    ConcreteHandler1(IHandler *handler = nullptr):IHandler(handler){}
     
-    void HandleRequest(int event = -1) override{
+    void HandleRequest(int event = -1) override
+    {
         if(1 == event)
             std::cout<<"drink it."<<std::endl;
         else
@@ -39,11 +40,10 @@ public:
  */
 class ConcreteHandler2 : public IHandler{
 public:
-    ConcreteHandler2(){
-        
-    }
+    ConcreteHandler2()=default;
 
-    void HandleRequest(int event = -1) override{
+    void HandleRequest(int event = -1) override
+    {
         std::cout<<"cannot do it."<<std::endl;
     }
 };
