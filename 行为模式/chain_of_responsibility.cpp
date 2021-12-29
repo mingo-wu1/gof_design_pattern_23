@@ -39,7 +39,7 @@ public:
  */
 class ConcreteHandler2 : public IHandler{
 public:
-    ConcreteHandler2():IHandler(nullptr){
+    ConcreteHandler2(){
         
     }
 
