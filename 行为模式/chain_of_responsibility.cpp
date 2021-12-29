@@ -59,9 +59,9 @@ const int shadow_run = 2;
 int main(){
     ConcreteHandler2 concreteHandle2; // 先构造最终链
     IHandler *concreteHandle1 = new ConcreteHandler1(&concreteHandle2); // 再构造头链或中间链
-    concreteHandle1 ->HandleRequest(shadow_eat); // res: cannot do it.
-    concreteHandle1 ->HandleRequest(shadow_drink); // res: drink it.
-    concreteHandle1 ->HandleRequest(shadow_run); // res: cannot do it.
-    delete(concreteHandle1); // 析狗
+    concreteHandle1->HandleRequest(shadow_eat); // res: cannot do it.
+    concreteHandle1->HandleRequest(shadow_drink); // res: drink it.
+    concreteHandle1->HandleRequest(shadow_run); // res: cannot do it.
+    delete(concreteHandle1); // 析构
     return 0;
 }
