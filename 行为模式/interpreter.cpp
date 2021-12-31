@@ -16,7 +16,7 @@ public:
 };
 
 /**
- * @brief 核心点：Interpret(Context *),获取字符用于判断
+ * @brief 核心点：Interpret(Context *),获取字符用于判断得出翻译结果
  * 
  */
 class AbstractExpression
@@ -26,7 +26,7 @@ public:
 };
 
 /**
- * @brief 重点：Interpret(Context *),获取字符用于判断
+ * @brief 终结符，重点：Interpret(Context *),获取字符用于判断得出翻译结果
  * 
  */
 class TerminalExpression : public AbstractExpression
@@ -39,8 +39,8 @@ public:
 };
 
 /**
- * @brief 重点：Interpret(Context *),获取字符用于判断
- * 
+ * @brief 非终结符，可以不断的增加非终结符,以增加各类字符的翻译
+ *        重点：Interpret(Context *),获取字符用于判断得出翻译结果
  */
 class NonterminalExpression : public AbstractExpression
 {
@@ -50,7 +50,7 @@ public:
     }
 
     /**
-     * @brief 全场唯一核心点：Interpret(Context *), 语法树的递归核心点
+     * @brief 全场唯一核心点：Interpret(Context *), 语法树（翻译树）的递归核心点
      * 
      */
     void Interpret(Context *context) override
