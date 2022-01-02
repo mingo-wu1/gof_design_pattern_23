@@ -22,6 +22,7 @@ public:
 class AbstractExpression
 {
 public:
+    ~AbstractExpression(){}
     virtual void Interpret(Context *context) = 0;
 };
 
